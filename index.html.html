@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ﾠ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fef4f4;
+            color: #ff69b4;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 10%;
+            color: #ff1493;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff85c0;
+        }
+        .progress-bar {
+            width: 80%;
+            background-color: #f3f3f3;
+            border-radius: 10px;
+            margin: 20px auto;
+            height: 20px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            width: 0;
+            background-color: #ff1493;
+            border-radius: 10px;
+            transition: width 0.5s;
+        }
+        p {
+            font-size: 20px;
+            color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <h1>oiiiiiiiii</h1>
+    <p id="mensagem">Clique no botão para começar!</p>
+    
+    <div class="progress-bar">
+        <div id="progress" class="progress"></div>
+    </div>
+
+    <button id="botao" onclick="interagir()">Começar</button>
+
+    <script>
+        let etapa = 0; // Controla a etapa do texto
+        let progresso = 0; // Controla a barra de progresso
+
+        function interagir() {
+            const mensagem = document.getElementById('mensagem');
+            const progress = document.getElementById('progress');
+            const botao = document.getElementById('botao');
+
+            // Atualiza as frases e progresso conforme a etapa
+            if (etapa === 0) {
+                progresso = 33;
+                mensagem.textContent = " Você tá preparado ?.";
+                botao.textContent = "Quer mais?";
+            } else if (etapa === 1) {
+                progresso = 66;
+                mensagem.textContent = "Então vamos lá.. .";
+                botao.textContent = "Quer a última?";
+            } else if (etapa === 2) {
+                progresso = 100;
+                mensagem.textContent = "Te amo com todo meu coração ❤️";
+                botao.style.display = "none"; // Esconde o botão na última frase
+            }
+
+            // Atualiza a barra de progresso
+            progress.style.width = progresso + "%";
+
+            // Avança para a próxima etapa
+            etapa++;
+        }
+    </script>
+</body>
+</html>
